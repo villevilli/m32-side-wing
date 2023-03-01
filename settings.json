@@ -1,0 +1,98 @@
+{
+    "config":{
+        "midas_ip":"192.168.0.104",
+        "midas_port": 10023
+    },
+    "slide_config":[
+        {
+            "physicalSlide": 0,
+            "levels":[
+                "/ch/1/mix/01/"
+            ]
+        },
+        {
+            "physicalSlide": 1,
+            "levels":[
+                "/ch/1/mix/02/"
+            ]
+        },
+        {
+            "physicalSlide": 2,
+            "levels":[
+                "/ch/1/mix/03/"
+            ]
+        },
+        {
+            "physicalSlide": 3,
+            "levels":[
+                "/ch/1/mix/04/"
+            ]
+        },
+        {
+            "physicalSlide": 4,
+            "levels":[
+                "/ch/1/mix/05/"
+            ]
+        },
+        {
+            "physicalSlide": 5,
+            "levels":[
+                "/ch/1/mix/06/"
+            ]
+        },
+        {
+            "physicalSlide": 6,
+            "levels":[
+                "/ch/1/mix/07/"
+            ]
+        },
+        {
+            "physicalSlide": 7,
+            "levels":[
+                "/ch/1/mix/08/"
+            ]
+        },
+        {
+            "physicalSlide": 8,
+            "levels":[
+                "/ch/1/mix/09/"
+            ]
+        },
+        {
+            "physicalSlide": 9,
+            "levels":[
+                "/ch/1/mix/10/"
+            ]
+        },    {
+            "physicalSlide": 10,
+            "levels":[
+                "/ch/1/mix/11/"
+            ]
+        },
+        {
+            "physicalSlide": 11,
+            "levels":[
+                "/ch/1/mix/12/"
+            ]
+        },
+        {
+            "physicalSlide": 12,
+            "levels":[
+                "/ch/1/mix/13/"
+            ]
+        },
+        {
+            "physicalSlide": 13,
+            "levels":[
+                "/ch/1/mix/14/"
+            ]
+        },
+        {
+            "physicalSlide": 14,
+            "levels":[
+                "/ch/1/mix/15/",
+                "/ch/1/mix/16/"
+            ]
+        }
+    ]
+}

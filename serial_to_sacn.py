@@ -2,6 +2,7 @@ import sys
 import serial
 import math
 import time
+import json
 from statistics import mean
 
 from pythonosc import udp_client
@@ -10,12 +11,13 @@ from pythonosc.dispatcher import Dispatcher
 
 serial_dev = '/dev/ttyUSB0'
 serial_baud = 115200
+configuration = {}
 
 ser = None
 
 slideHistory = []
 rows, cols=16,35
-for i in range(rows):
+for slide in range(rows):
     col = []
     for j in range(cols):
         col.append(0)
@@ -28,9 +30,6 @@ previousState = [0]*16
 #sender = sacn.sACNsender(fps=60)
 
 dmx_vals = [0] * 75
-
-client = udp_client.SimpleUDPClient("192.168.0.104", 10023)
-print("Connected!")
 
 def open_serial():
     global ser
@@ -49,6 +48,15 @@ def updateHistory(newValue, slideNumber):
 
     slideHistory[slideNumber][0] = newValue
     #print(slideHistory)
+
+with open("settings.json", "r") as settings:
+    configuration = json.load(settings)
+
+print(configuration)
+
+
+client = udp_client.SimpleUDPClient(configuration["config"]["midas_ip"], configuration["config"]["midas_port"])
+print(f"Connected to a midas at {configuration['config']['midas_ip']}:{configuration['config']['midas_port']}")
 
 while True:
     open_serial()
@@ -73,26 +81,32 @@ while True:
 
                 #print(dmx_vals)
                 #print(slideHistory)
-                for i in range(1,16):
-                    if round(dmx_vals[i+14]/255) == 1 and previousState[i] == 0 :
-                        state[i] = not state[i]
+                for slide in configuration["slide_config"]:
+                    print(slide)
+                    if round(dmx_vals[slide[physicalSlide]+15]/255) == 1 and previousState[slide[physicalSlide]] == 0 :
+                        state[slide] = not state[slide]
                         
-                    updateHistory(dmx_vals[i+59]/255,i-1)                                         
+                    updateHistory(dmx_vals[slide[physicalSlide]+60]/255,slide[physicalSlide])                                         
                     
-                    if state[i]:
-                        client.send_message(f"/ch/{i:02}/mix/03/on", 1)
-                    else:
-                        client.send_message(f"/ch/{i:02}/mix/03/on", 0)
 
-                    previousState[i] = dmx_vals[i+14]/255
-            for i in range(len(slideHistory)):
+                    # Changes here not yet tested!
+                    for j in i["levels"]:
+                        if state[slide[physicalSlide]]:
+                            client.send_message(f"{j}on", 1)
+                        else:
+                            client.send_message(f"{j}on", 0)
+
+                    previousState[slide[physicalSlide]] = dmx_vals[slide[physicalSlide]+54]/255
+            for i in range(len(slideHistory)-1):
                 dampen(i)
-                client.send_message(f"/ch/{i:02}/mix/03/level", mean(slideHistory[i-1]))
+                #print(configuration['slide_config'][i])
+                for j in configuration['slide_config'][i]['levels']:
+                    client.send_message(f"{j}level", mean(slideHistory[i-1]))
 
             time.sleep(0.003)
         except Exception as e:
             print("Error occured, let's try again", str(e))
-            #raise e
+            raise e
         
         
 

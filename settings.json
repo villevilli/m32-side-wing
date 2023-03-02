@@ -9,7 +9,7 @@
             "levels":[
                 "/ch/01/mix/03/"
             ]
-        }/*,
+        },
         {
             "physicalSlide": 1,
             "levels":[
@@ -93,6 +93,6 @@
                 "/ch/15/mix/03/",
                 "/ch/16/mix/03/"
             ]
-        }*/
+        }
     ]
 }

@@ -86,8 +86,8 @@ while True:
                     if round(dmx_vals[slide["physicalSlide"]+15]/255) == 1 and previousState[slide["physicalSlide"]] == 0 :
                         state[slide["physicalSlide"]] = not state[slide["physicalSlide"]]
                         
-                    print(dmx_vals[slide["physicalSlide"]+60])
-                    print(slide["physicalSlide"])
+                    #print(dmx_vals[slide["physicalSlide"]+60])
+                    #print(slide["physicalSlide"])
                     updateHistory(dmx_vals[slide["physicalSlide"]+60]/255,slide["physicalSlide"])                                         
                     
 
@@ -105,9 +105,9 @@ while True:
                 dampen(i)
                 #print(configuration['slide_config'][i])
                 for j in configuration['slide_config'][i]['levels']:
-                    #print(j)
-                    #print(f"{j}level")
-                    #print(slideHistory[i-1])
+                    print(j)
+                    print(f"{j}level")
+                    print(slideHistory[i-1])
                     client.send_message(f"{j}level", mean(slideHistory[i-1]))
 
             time.sleep(0.003)

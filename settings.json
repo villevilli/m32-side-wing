@@ -7,91 +7,91 @@
         {
             "physicalSlide": 0,
             "levels":[
-                "/ch/1/mix/01/"
+                "/ch/01/mix/03/"
             ]
         },
         {
             "physicalSlide": 1,
             "levels":[
-                "/ch/1/mix/02/"
+                "/ch/02/mix/03/"
             ]
         },
         {
             "physicalSlide": 2,
             "levels":[
-                "/ch/1/mix/03/"
+                "/ch/03/mix/03/"
             ]
         },
         {
             "physicalSlide": 3,
             "levels":[
-                "/ch/1/mix/04/"
+                "/ch/04/mix/03/"
             ]
         },
         {
             "physicalSlide": 4,
             "levels":[
-                "/ch/1/mix/05/"
+                "/ch/05/mix/03/"
             ]
         },
         {
             "physicalSlide": 5,
             "levels":[
-                "/ch/1/mix/06/"
+                "/ch/06/mix/03/"
             ]
         },
         {
             "physicalSlide": 6,
             "levels":[
-                "/ch/1/mix/07/"
+                "/ch/07/mix/03/"
             ]
         },
         {
             "physicalSlide": 7,
             "levels":[
-                "/ch/1/mix/08/"
+                "/ch/08/mix/03/"
             ]
         },
         {
             "physicalSlide": 8,
             "levels":[
-                "/ch/1/mix/09/"
+                "/ch/09/mix/03/"
             ]
         },
         {
             "physicalSlide": 9,
             "levels":[
-                "/ch/1/mix/10/"
+                "/ch/10/mix/03/"
             ]
         },    {
             "physicalSlide": 10,
             "levels":[
-                "/ch/1/mix/11/"
+                "/ch/11/mix/03/"
             ]
         },
         {
             "physicalSlide": 11,
             "levels":[
-                "/ch/1/mix/12/"
+                "/ch/12/mix/03/"
             ]
         },
         {
             "physicalSlide": 12,
             "levels":[
-                "/ch/1/mix/13/"
+                "/ch/13/mix/03/"
             ]
         },
         {
             "physicalSlide": 13,
             "levels":[
-                "/ch/1/mix/14/"
+                "/ch/14/mix/03/"
             ]
         },
         {
             "physicalSlide": 14,
             "levels":[
-                "/ch/1/mix/15/",
-                "/ch/1/mix/16/"
+                "/ch/15/mix/03/",
+                "/ch/16/mix/03/"
             ]
         }
     ]

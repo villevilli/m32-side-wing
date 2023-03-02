@@ -86,6 +86,8 @@ while True:
                     if round(dmx_vals[slide["physicalSlide"]+15]/255) == 1 and previousState[slide["physicalSlide"]] == 0 :
                         state[slide["physicalSlide"]] = not state[slide["physicalSlide"]]
                         
+                    print(dmx_vals[slide["physicalSlide"]+60])
+                    print(slide["physicalSlide"])
                     updateHistory(dmx_vals[slide["physicalSlide"]+60]/255,slide["physicalSlide"])                                         
                     
 

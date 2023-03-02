@@ -105,9 +105,10 @@ while True:
                 dampen(i)
                 #print(configuration['slide_config'][i])
                 for j in configuration['slide_config'][i]['levels']:
-                    print(j)
-                    print(f"{j}level")
-                    print(slideHistory[i-1])
+                    if(j == "/ch/01/mix/03/"):
+                        print(j)
+                        print(f"{j}level")
+                        print(slideHistory[i-1])
                     client.send_message(f"{j}level", mean(slideHistory[i-1]))
 
             time.sleep(0.003)

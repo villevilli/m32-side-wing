@@ -108,8 +108,8 @@ while True:
                     if(j == "/ch/01/mix/03/"):
                         print(j)
                         print(f"{j}level")
-                        print(slideHistory[i-1])
-                    client.send_message(f"{j}level", mean(slideHistory[i-1]))
+                        print(slideHistory[i])
+                    client.send_message(f"{j}level", mean(slideHistory[i]))
 
             time.sleep(0.003)
         except Exception as e:

@@ -90,9 +90,9 @@ while True:
                     
 
                     # Changes here not yet tested!
-                    print(i["levels"])
+                    print(i)
 
-                    for j in i["levels"]:
+                    for j in slide["levels"]:
                         if state[slide["physicalSlide"]]:
                             client.send_message(f"{j}on", 1)
                         else:

@@ -98,8 +98,8 @@ while True:
                         else:
                             client.send_message(f"{j}on", 0)
 
-                    previousState[slide["physicalSlide"]] = dmx_vals[slide["physicalSlide"]+54]/255
-            for i in range(len(slideHistory)-1):
+                    previousState[slide["physicalSlide"]] = dmx_vals[slide["physicalSlide"]+53]/255
+            for i in range(len(slideHistory)):
                 dampen(i)
                 #print(configuration['slide_config'][i])
                 for j in configuration['slide_config'][i]['levels']:

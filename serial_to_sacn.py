@@ -90,7 +90,7 @@ while True:
                     
 
                     # Changes here not yet tested!
-                    print(i)
+                    # print(i)
 
                     for j in slide["levels"]:
                         if state[slide["physicalSlide"]]:
